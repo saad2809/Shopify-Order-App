@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node src/server.js",
+    "vercel-build": "echo 'Ready to deploy!'"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +15,13 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "yargs": "^17.7.2"
+    "yargs": "^17.7.2",
+    "serverless-http": "^2.3.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.1"
   }
 }
+
+
+
