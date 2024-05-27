@@ -3,6 +3,8 @@ const cors = require('cors');
 const ordersRouter = require('./routes/orders');
 const customerRouter = require('./routes/customers');
 
+const checkApiKey = require('./middleware/apiKeyAuth');
+
 const app = express();
 
 const allowlist = ['https://heartycajun.com', 'https://6a5476-3.myshopify.com', 'http://127.0.0.1:9292'];
@@ -22,8 +24,9 @@ var corsOptionsDelegate = function (req, callback) {
 // Use cors middleware with options
 app.use(cors(corsOptionsDelegate)); 
 
-// Use routes
-app.use('/api/orders', ordersRouter);
-app.use('/api/customers', customerRouter);
+
+// Protect your routes
+app.use('/api/orders', checkApiKey, ordersRouter);
+app.use('/api/customers', checkApiKey, customerRouter);
 
 module.exports = app;
