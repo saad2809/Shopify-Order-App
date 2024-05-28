@@ -9,7 +9,7 @@
   const checkApiKey = require('../src/middleware/apiKeyAuth');
 
 
-  const allowlist = ['https://heartycajun.com', 'https://6a5476-3.myshopify.com', 'https://ameer-hamza-test.myshopify.com', 'http://127.0.0.1:9292'];
+  const allowlist = ['https://heartycajun.com', 'https://6a5476-3.myshopify.com', 'http://127.0.0.1:9292'];
 
 
   var corsOptionsDelegate = function (req, callback) {
